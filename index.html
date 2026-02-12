@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lux Car Hub - Automobili di Lusso | Esclusività e Prestazioni</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23111111" width="1200" height="600"/><circle cx="600" cy="300" r="150" fill="%23d4af37" opacity="0.1"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero-content p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #d4af37;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 2px solid #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #d4af37;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #d4af37;
+            margin-left: 20px;
+        }
+
+        .btn-secondary:hover {
+            background: #d4af37;
+            color: #000;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #d4af37;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-info h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .product-price {
+            font-size: 28px;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            background: #f9f9f9;
+            padding: 60px 20px;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #d4af37;
+        }
+
+        .feature h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #d4af37 0%, #c99f31 100%);
+            color: #000;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 10px;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .inquiry-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 3px solid #d4af37;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #d4af37;
+            color: #1a1a1a;
+            border-radius: 50%;
+            line-height: 40px;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: transform 0.3s;
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .btn-secondary {
+                display: block;
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🏎️ Lux Car Hub</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#vehicles">Veicoli</a></li>
+                <li><a href="#features">Caratteristiche</a></li>
+                <li><a href="#contact">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>LUSSO E POTENZA</h1>
+            <p>Scopri le Automobili più Esclusive del Mercato</p>
+            <a href="#vehicles" class="btn">Esplora la Collezione</a>
+            <a href="#contact" class="btn btn-secondary">Richiedi una Consulenza</a>
+        </div>
+    </section>
+
+    <section id="vehicles">
+        <h2 class="section-title">Le Nostre Eccellenze</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">🏎️ SUPER SPORT PRO</div>
+                <div class="product-info">
+                    <h3>Super Sport Pro</h3>
+                    <p>Prestazioni estreme con eleganza senza tempo. 0-100 km/h in 2.8 secondi.</p>
+                    <div class="product-price">€589.000</div>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center;">Acquista Ora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">💎 ELEGANZA PLATINUM</div>
+                <div class="product-info">
+                    <h3>Eleganza Platinum</h3>
+                    <p>Comfort esclusivo e tecnologia avanzata per il discernimento assoluto.</p>
+                    <div class="product-price">€425.000</div>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center;">Acquista Ora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">👑 ROYAL EDITION</div>
+                <div class="product-info">
+                    <h3>Royal Edition</h3>
+                    <p>L'apice dell'esclusività con interni in pelle pregiata e finiture oro.</p>
+                    <div class="product-price">€750.000</div>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center;">Acquista Ora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Perché Scegliere Lux Car Hub</h2>
+        <div class="features-list">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h4>Prestazioni Superiori</h4>
+                <p>Motori all'avanguardia con potenza controllata e affidabilità garantita.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h4>Design Esclusivo</h4>
+                <p>Linee aerodinamiche e stile inconfondibile che catturano lo sguardo.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h4>Sicurezza Certificata</h4>
+                <p>Sistemi di sicurezza avanzati e tecnologie anti-collisione di ultima generazione.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🌍</div>
+                <h4>Consegna Mondiale</h4>
+                <p>Spedizione assicurata in oltre 150 paesi con tracking in tempo reale.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">💳</div>
+                <h4>Finanziamenti Flessibili</h4>
+                <p>Piani di pagamento personalizzati con tassi competitivi garantiti.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🛠️</div>
+                <h4>Manutenzione Illimitata</h4>
+                <p>Assistenza 24/7 e service gratuito per i primi 5 anni di possesso.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <h2>UNISCITI AGLI ESCLUSIVI PROPRIETARI GLOBALI</h2>
+        <p>Contattaci oggi per ricevere un'offerta personalizzata e accedere all'esperienza Lux Car Hub</p>
+        
+        <form class="inquiry-form">
+            <div class="form-group">
+                <label for="name">Nome Completo*</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefono*</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Messaggio*</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">INVIA RICHIESTA</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Lux Car Hub - Eccellenza Automobilistica. Tutti i diritti riservati.</p>
+        <p>Powered by Premium Auto Experience | Sede Principale: Europa</p>
+        <div class="social-links">
+            <a href="#">F</a>
+            <a href="#">T</a>
+            <a href="#">I</a>
+            <a href="#">L</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 12px; opacity: 0.8;">Note Legali | Privacy Policy | Termini di Servizio</p>
+    </footer>
+</body>
+</html>
