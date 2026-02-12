@@ -264,43 +264,7 @@
             opacity: 0.9;
         }
 
-        .inquiry-form {
-            background: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 14px;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #d4af37;
-        }
-
-        footer {
+        @media (max-width: 768px) {
             background: #1a1a1a;
             color: #fff;
             text-align: center;
@@ -438,30 +402,7 @@
     <section class="cta-section" id="contact">
         <h2>UNISCITI AGLI ESCLUSIVI PROPRIETARI GLOBALI</h2>
         <p>Contattaci oggi per ricevere un'offerta personalizzata e accedere all'esperienza Lux Car Hub</p>
-        
-        <form class="inquiry-form">
-            <div class="form-group">
-                <label for="name">Nome Completo*</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email*</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Telefono*</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Messaggio*</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">INVIA RICHIESTA</button>
-        </form>
+        <p>Email: info@luxcarhub.it | Telefono: +39 02 1234 5678</p>
     </section>
 
     <footer>
