@@ -64,7 +64,7 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23111111" width="1200" height="600"/><circle cx="600" cy="300" r="150" fill="%23d4af37" opacity="0.1"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=1200&h=800&fit=crop');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -225,6 +225,28 @@
 
         .feature {
             text-align: center;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #fff;
+            padding-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature-content {
+            padding: 0 20px;
         }
 
         .feature-icon {
@@ -242,6 +264,64 @@
         .feature p {
             color: #666;
             font-size: 14px;
+        }
+
+        .inquiry-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 30px auto 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-grid.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+
+        .form-group textarea {
+            grid-column: 1 / -1;
+        }
+
+        .form-submit {
+            grid-column: 1 / -1;
+            margin-top: 20px;
         }
 
         .cta-section {
@@ -356,53 +436,155 @@
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title" style="margin-top: 80px;">Collezione Esclusiva Aggiuntiva</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1553882900-f2b06efa0857?w=500&h=300&fit=crop" alt="Velocità Nera"></div>
+                <div class="product-info">
+                    <h3>Velocità Nera</h3>
+                    <p>Aerodinamica perfetta con motore V12 turbo e trazione integrale.</p>
+                    <div class="product-price">€695.000</div>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center;">Acquista Ora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=500&h=300&fit=crop" alt="Diamante Bianco"></div>
+                <div class="product-info">
+                    <h3>Diamante Bianco</h3>
+                    <p>Eleganza minimalista con tecnologia ibrida eco-friendly premium.</p>
+                    <div class="product-price">€520.000</div>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center;">Acquista Ora</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image"><img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?w=500&h=300&fit=crop" alt="Tempesta Rossa"></div>
+                <div class="product-info">
+                    <h3>Tempesta Rossa</h3>
+                    <p>Racing puro con sospensioni attive e cockpit futuristico.</p>
+                    <div class="product-price">€820.000</div>
+                    <a href="#contact" class="btn" style="width: 100%; text-align: center;">Acquista Ora</a>
+                </div>
+            </div>
     </section>
 
     <section class="features">
         <h2 class="section-title">Perché Scegliere Lux Car Hub</h2>
         <div class="features-list">
             <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <h4>Prestazioni Superiori</h4>
-                <p>Motori all'avanguardia con potenza controllata e affidabilità garantita.</p>
+                <div class="feature-image"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&h=300&fit=crop" alt="Prestazioni"></div>
+                <div class="feature-content">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Prestazioni Superiori</h4>
+                    <p>Motori all'avanguardia con potenza controllata e affidabilità garantita.</p>
+                </div>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">🎨</div>
-                <h4>Design Esclusivo</h4>
-                <p>Linee aerodinamiche e stile inconfondibile che catturano lo sguardo.</p>
+                <div class="feature-image"><img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=400&h=300&fit=crop" alt="Design"></div>
+                <div class="feature-content">
+                    <div class="feature-icon">🎨</div>
+                    <h4>Design Esclusivo</h4>
+                    <p>Linee aerodinamiche e stile inconfondibile che catturano lo sguardo.</p>
+                </div>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <h4>Sicurezza Certificata</h4>
-                <p>Sistemi di sicurezza avanzati e tecnologie anti-collisione di ultima generazione.</p>
+                <div class="feature-image"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Sicurezza"></div>
+                <div class="feature-content">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Sicurezza Certificata</h4>
+                    <p>Sistemi di sicurezza avanzati e tecnologie anti-collisione di ultima generazione.</p>
+                </div>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">🌍</div>
-                <h4>Consegna Mondiale</h4>
-                <p>Spedizione assicurata in oltre 150 paesi con tracking in tempo reale.</p>
+                <div class="feature-image"><img src="https://images.unsplash.com/photo-1578814050971-1e14e46a5f3e?w=400&h=300&fit=crop" alt="Consegna"></div>
+                <div class="feature-content">
+                    <div class="feature-icon">🌍</div>
+                    <h4>Consegna Mondiale</h4>
+                    <p>Spedizione assicurata in oltre 150 paesi con tracking in tempo reale.</p>
+                </div>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">💳</div>
-                <h4>Finanziamenti Flessibili</h4>
-                <p>Piani di pagamento personalizzati con tassi competitivi garantiti.</p>
+                <div class="feature-image"><img src="https://images.unsplash.com/photo-1554224311-beee415c201f?w=400&h=300&fit=crop" alt="Finanziamenti"></div>
+                <div class="feature-content">
+                    <div class="feature-icon">💳</div>
+                    <h4>Finanziamenti Flessibili</h4>
+                    <p>Piani di pagamento personalizzati con tassi competitivi garantiti.</p>
+                </div>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">🛠️</div>
-                <h4>Manutenzione Illimitata</h4>
-                <p>Assistenza 24/7 e service gratuito per i primi 5 anni di possesso.</p>
+                <div class="feature-image"><img src="https://images.unsplash.com/photo-1632837551837-c7f46d1f3427?w=400&h=300&fit=crop" alt="Manutenzione"></div>
+                <div class="feature-content">
+                    <div class="feature-icon">🛠️</div>
+                    <h4>Manutenzione Illimitata</h4>
+                    <p>Assistenza 24/7 e service gratuito per i primi 5 anni di possesso.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" id="contact">
-        <h2>UNISCITI AGLI ESCLUSIVI PROPRIETARI GLOBALI</h2>
-        <p>Contattaci oggi per ricevere un'offerta personalizzata e accedere all'esperienza Lux Car Hub</p>
-        <p>Email: info@luxcarhub.it | Telefono: +39 02 1234 5678</p>
+    <section id="contact">
+        <h2 class="section-title">CONSULENZA E ACQUISTO</h2>
+        <p style="text-align: center; font-size: 18px; margin-bottom: 40px; color: #666;">Compila il modulo per ottenere una consulenza personalizzata o iniziare il processo di acquisto della tua auto di lusso</p>
+        
+        <form class="inquiry-form">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                    <label for="name">Nome Completo*</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                <div class="form-group">
+                    <label for="phone">Telefono*</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="model">Modello Interessato*</label>
+                    <select id="model" name="model" required>
+                        <option value="">Seleziona un modello</option>
+                        <option value="super-sport">Super Sport Pro - €589.000</option>
+                        <option value="eleganza">Eleganza Platinum - €425.000</option>
+                        <option value="royal">Royal Edition - €750.000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <div class="form-group">
+                    <label for="service">Servizio Richiesto*</label>
+                    <select id="service" name="service" required>
+                        <option value="">Seleziona servizio</option>
+                        <option value="consulenza">Consulenza Personalizzata</option>
+                        <option value="acquisto">Acquisto Diretto</option>
+                        <option value="prova">Prova su Strada</option>
+                        <option value="finanziamento">Info Finanziamento</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <div class="form-group">
+                    <label for="message">Messaggio/Note</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Raccontaci di più sulle tue esigenze..."></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%; margin-top: 30px; padding: 18px; font-size: 16px;">INVIA RICHIESTA DI CONSULENZA</button>
+        </form>
     </section>
 
     <footer>
